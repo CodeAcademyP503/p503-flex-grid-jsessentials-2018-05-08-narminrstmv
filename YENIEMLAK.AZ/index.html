@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px;
+    }
+
+    .header {
+        background-color: #6F6F6F;
+        min-width: 1005px;
+    }
+
+    .header .head {
+        height: 45px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 5px;
+    }
+
+    .header .head .logo {
+        width: 20%;
+        height: 40px;
+        cursor: pointer;
+        background: url(logo.png) no-repeat;
+        float: left;
+
+    }
+
+    ul.dropdown {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+        width: 40%;
+
+    }
+
+    ul.dropdown li {
+        display: inline;
+        float: left;
+        text-align: center;
+    }
+
+    ul.dropdown li.dropdown-top a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul.dropdown a.dropdown-top {
+        font-weight: bold;
+        color: #FFFFFF;
+        width: 90px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+
+    }
+
+    .header .head .search-ads {
+        width: 20%;
+        float: left;
+        padding-top: 8px;
+    }
+
+    header .head .search-ads input[type="text"] {
+        padding: 0px;
+        width: 50px;
+        height: 22px;
+        border-radius: 3px 0px 0px 3px;
+        border: 0px;
+        outline: none;
+        font-weight: bold;
+        color: #999999;
+        text-align: center;
+    }
+
+    input {
+        background-color: white;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        margin: 0em;
+        font: 400 13.3333px Arial;
+        text-rendering: auto;
+    }
+
+    .header .head .search-ads input[type="button"] {
+        width: 30px;
+        height: 22px;
+        background: url(search.png) no-repeat #B3B3B3;
+        border-radius: 0px 3px 3px 0px;
+        border: 0px;
+        cursor: pointer;
+    }
+
+    .search-ads #id {
+        padding: 1px 6px;
+        align-items: flex-start;
+        text-align: center;
+        float: left;
+        padding-top: 8px;
+        box-sizing: border-box;
+    }
+
+    .header .head .add-ads {
+        float: right;
+        padding: 4px 22px;
+
+    }
+
+    .link {
+        color: #84ae3e;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .header .head .add-ads input[type="button"] {
+        background-color: #F6A828;
+        border-radius: 5px;
+        border: none;
+        color: #FFF;
+        text-shadow: 1px 1px 1px #949494;
+        cursor: pointer;
+        width: 140px;
+        height: 30px;
+        font-size: 16px;
+
+    }
+
+    /*header style final*/
+
+    .content {
+        width: 1100px;
+        margin: 0 auto;
+    }
+
+    table {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: grey;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    td,
+    th {
+        display: table-cell;
+        vertical-align: inherit;
+    }
+
+    .search {
+        width: 620px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px -2px #363636;
+        color: #FFFFFF;
+        font-size: 14px;
+        background-color: #84AE3E;
+        padding-top: 10px;
+    }
+
+    form {
+        display: block;
+        margin-top: -72em;
+
+    }
+
+    .search .col {
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+    }
+
+    .search .col label {
+        display: block;
+        height: 35px;
+        line-height: 35px;
+        padding-left: 10px;
+    }
+
+    .search .col label span {
+        width: 100px;
+        display: inline-block;
+    }
+
+    .search .bselect {
+        width: 180px;
+    }
+
+    .search select {
+        height: 28px;
+        color: #555;
+        background: url(sel_ar.png) no-repeat right #FFFFFF;
+        border-radius: 5px;
+        border: 1px solid #73894F;
+        padding-left: 10px;
+        outline: 0;
+        font-size: 14px;
+        box-shadow: 0px 0px 4px 0px #6D8F34;
+    }
+
+    option {
+        font-weight: normal;
+        display: block;
+        white-space: pre;
+        min-height: 1.2em;
+        padding: 0px 2px 1px;
+    }
+
+    .search .bottom {
+        margin-top: 10px;
+        height: 30px;
+        width: 100%;
+        background-color: #6D8F34;
+        border-radius: 0px 0px 5px 5px;
+        line-height: 30px;
+        border-top: 1px solid #4A6122;
+        text-align: right;
+    }
+
+    .search .advsearch {
+        background: url(search.png) left center no-repeat;
+        display: inline-block;
+        padding-left: 25px;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"]+label span {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        background: url(checkbox.png) left top no-repeat;
+        cursor: pointer;
+    }
+
+    .search input[type="submit"] {
+        background-color: #F6A828;
+        height: 30px;
+        width: 100px;
+        padding: 5px;
+        font-size: 14px;
+        text-align: center;
+        color: #FFFFFF;
+        border-radius: 0px 0px 5px 0px;
+        cursor: pointer;
+        border: 0px;
+        float: right;
+
+    }
+
+    /*orta*/
+
+    .loginlink {
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        padding: 5px 10px 5px 10px;
+        background-color: #84ae3e;
+        margin-top: -1000px;
+        text-shadow: 1px 1px 1px #949494;
+        font-size: 14px;
+    }
+
+    .mainlink {
+        color: #3E3E3E;
+        border: 1px solid #8fb357;
+        border-radius: 5px;
+        padding: 3px 10px 3px 10px;
+        background-color: #f4ffe2;
+        margin-top: 10px;
+    }
+
+    
+</style>
+
+<body>
+    <!-- headeer -->
+    <div class="header">
+        <div class="head">
+            <a href="#">
+                <div class="logo"></div>
+            </a>
+
+
+            <ul class="dropdown">
+                <li class="dropdown-top">
+                    <a class="dropdown-top" href="#">Ana səhifə</a>
+                </li>
+                <li class="dropdown-top">
+                    <a class="dropdown-top" href="#">Axtarış</a>
+                </li>
+                <li class="dropdown-top">
+                    <a class="dropdown-top" href="#">Rieltor</a>
+                </li>
+                <li class="dropdown-top">
+                    <a class="dropdown-top" href="#">Faydalı</a>
+                </li>
+                <li class="dropdown-top">
+                    <a href="#" class="dropdown-top">Əlaqə</a>
+                </li>
+
+            </ul>
+
+
+            <div class="search-ads">
+                <input id="inp_kod" type="text" name="eid" placeholder="Elan №">
+                <input class="btn_kod" id="kod" type="button" value=" ">
+            </div>
+
+
+            <div class="add-ads">
+                <a class="link" href="#">
+                    <input type="button" value="+ Elan ver">
+                </a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- headeer son-->
+    <table class="content">
+        <tbody>
+            <tr>
+                <td height="15" width="10px"></td>
+                <td rowspan="2" width="20%" align="right" valign="top" height="2000">
+                    <br>
+                    <a href="http://instagram.com/yeniemlak.az/">
+                        <img src="http://yeniemlak.az/img/banner/instaqram.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yeniemlak.az/elan/axtar?elan_nov=3" target="_blank">
+                        <img src="http://yeniemlak.az/img/banner/gunluk_ev.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yeniemlak.az/ucuz-kiraye-evler" target="_blank">
+                        <img src="http://yeniemlak.az/img/banner/ucuz_kiraye.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yeniemlak.az/elan/axtar?elan_nov=3&amp;emlak=2" target="_blank">
+                        <img src="http://yeniemlak.az/img/banner/yayaz.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yeniemlak.az/qeydiyyatdan-kecme-qaydalari" target="_blank">
+                        <img src="http://yeniemlak.az/img/istban.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yenigun.az" target="_blank">
+                        <img src="http://yeniemlak.az/img/banner/yenigun.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yenitemir.az" target="_blank">
+                        <img src="http://yeniemlak.az/img/banner/yenitemir.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yeniavto.az" target="_blank">
+                        <img src="http://yeniemlak.az/img/banner/yeniavto.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="http://yeniemlak.az/kreditle-satilan-evler" target="_blank">
+                        <img src="http://yeniemlak.az/img/banner/kredit.jpg" width="170">
+                    </a>
+                    <br>
+                    <br>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td width="20%">
+                    <table align="left " width="100%">
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <!-- form -->
+                                    <form class="search">
+                                        <div class="col">
+                                            <label>
+                                                <span>Əmlakın növü</span>
+                                                <select name="emlak" id="emlak" class="bselect">
+                                                    <option value="1">Bina ev menzil</option>
+                                                </select>
+                                            </label>
+                                            <label>
+                                                <span>Elanın növü</span>
+                                                <select name="elan_nov" id="elan_nov" class="bselect">
+                                                    <option value="1">Satılır</option>
+                                                </select>
+                                            </label>
+                                            <label>
+                                                <span>Şəhər</span>
+                                                <select name="seher" id="seher" class="bselect">
+                                                    <option selected="selected" value="0">Bütün şəhərlər</option>
+                                                </select>
+                                            </label>
+                                            <label id="rayon" style="display: none;">
+                                                <span>Rayon</span>
+                                                <select name="rayon" id="rayon_v" class="bselect">
+                                                </select>
+                                            </label>
+                                            <label id="menteqe" style="display: none;">
+                                                <span>Məntəqə</span>
+                                                <select name="menteqe" id="menteqe_v" class="bselect">
+                                                </select>
+                                            </label>
+                                            <label id="metro" style="display: none;">
+                                                <span>Metro</span>
+                                                <select name="metro" id="metro_v" class="bselect">
+                                                    <option selected="selected" value="0">Bütün metrolar</option>
+
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <label for="none">
+                                                <span>Qiymət</span>
+                                                <select name="qiymet" id="qiymet" class="mselect">
+                                                    <option value="">min</option>
+                                                    <option>500</option>
+
+                                                </select>
+                                                <select name="qiymet2" id="qiymet2" class="mselect">
+                                                    <option value="">max</option>
+                                                    <option>1000</option>
+
+                                                </select>
+                                            </label>
+                                            <label id="mertebe" for="none">
+                                                <span>Mərtəbə</span>
+                                                <select name="mertebe" class="mselect">
+                                                    <option value=""> </option>
+                                                    <option value="1">1</option>
+
+                                                </select>
+                                                <select name="mertebe2" class="mselect">
+                                                    <option value=""> </option>
+                                                    <option value="1">1</option>
+
+                                                </select>
+                                            </label>
+                                            <label id="otaq" for="none">
+                                                <span>Otaq</span>
+                                                <select name="otaq" class="mselect">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+
+                                                </select>
+                                                <select name="otaq2" class="mselect">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+
+                                                </select>
+                                            </label>
+                                            <label id="sahe_m" for="none">
+                                                <span>Sahəsi</span>
+                                                <select name="sahe_m" class="mselect">
+                                                    <option value="">min</option>
+                                                    <option>10</option>
+
+                                                </select>
+                                                <select name="sahe_m2" class="mselect">
+                                                    <option value="">max</option>
+                                                    <option>10</option>
+
+                                                </select>
+                                            </label>
+                                            <label id="sahe_s" for="none" style="display: none;">
+                                                <span>Torpaq sahəsi</span>
+                                                <select name="sahe_s" class="mselect">
+                                                    <option value="">min</option>
+                                                    <option>1</option>
+
+                                                </select>
+                                                <select name="sahe_s2" class="mselect">
+                                                    <option value="">max</option>
+                                                    <option>1</option>
+
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="bottom">
+                                            <a href="/axtar">
+                                                <div class="advsearch">Ətraflı axtarış</div>
+                                            </a>
+                                            <input type="checkbox" id="photo" name="photo" value="1">
+                                            <label for="photo">
+                                                <span></span>Yalnız şəkilli</label>
+                                            <input type="checkbox" id="kredit_v" name="kredit" value="1">
+                                            <label for="kredit_v">
+                                                <span></span>Kredit</label>
+                                            <input type="submit" value="Axtar">
+                                        </div>
+                                    </form>
+                                </td>
+
+                                <!-- orta-->
+                                <td width="20%" align="center">
+                                    <a href="/login">
+                                        <div class="loginlink">► İstifadəçi girişi</div>
+                                    </a>
+
+                                    <a target="_blank" href="/elan-verilme-qaydalari">
+                                        <div class="mainlink">Elan verilmə qaydası</div>
+                                    </a>
+
+                                    <a target="_blank" href="/elan-silme-redakte-qaydalari">
+                                        <div class="mainlink">Elana düzəliş və silmək</div>
+                                    </a>
+
+                                    <a target="_blank" href="/bakida-evlerin-qiymeti">
+                                        <div class="mainlink">Bakıda evlərin qiyməti</div>
+                                    </a>
+
+                                    <a target="_blank" href="/odenisli-elan-verilme-qaydasi">
+                                        <div class="mainlink">Ödənişli elan verilməsi</div>
+                                    </a>
+
+                                </td>
+
+                                <!-- orta-->
+
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+
+
+                            
+                            
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
